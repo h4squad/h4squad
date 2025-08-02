@@ -1,19 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>H4 SQUAD</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>H4_SQUAD</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #0a0a0a;
+      color: #00ffcc;
+      font-family: 'Courier New', monospace;
+    }
+    header {
+      background: #000;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #00ffcc55;
+    }
+    header h1 {
+      font-size: 28px;
+      color: #00ff99;
+      animation: glitch 2s infinite;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    header h1 img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      border: 2px solid #00ffcc;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+    nav ul li a {
+      color: #00ffcc;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    nav ul li a:hover {
+      background: #00ffcc33;
+    }
+    main {
+      padding: 40px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    section {
+      margin-bottom: 50px;
+    }
+    .page-title {
+      font-size: 26px;
+      margin-bottom: 15px;
+      color: #0ff;
+    }
+    .fade {
+      animation: fadeIn 1.2s ease forwards;
+    }
+    @keyframes glitch {
+      0% { text-shadow: 2px 0 red, -2px 0 blue; }
+      50% { text-shadow: -2px 0 red, 2px 0 blue; }
+      100% { text-shadow: 2px 0 red, -2px 0 blue; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      font-size: 14px;
+    }
+    .telegram-link {
+      margin-top: 20px;
+      display: inline-block;
+      background: #00ff99;
+      color: black;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .telegram-link:hover {
+      background: #00cc77;
+    }
+  </style>
+  <script>
+    function showPage(id) {
+      const pages = document.querySelectorAll("section");
+      pages.forEach(page => page.style.display = "none");
+      document.getElementById(id).style.display = "block";
+    }
+    window.onload = () => {
+      showPage('home');
+    };
+  </script>
 </head>
 <body>
-  <div class="container">
-    <h1 id="title">H4 SQUAD</h1>
-    <p class="tagline">We don’t hack to destroy, we hack to build.</p>
-    <button onclick="reveal()">Enter</button>
-    <div id="secret" class="hidden">
-      <p>Welcome to the Squad.</p>
-    </div>
-  </div>
-  <script src="script.js"></script>
+  <header>
+    <h1><img src="https://i.ibb.co/w0htjLj/h4-squad-dp.jpg" alt="Logo"> H4_SQUAD</h1>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="showPage('home')">Home</a></li>
+        <li><a href="#" onclick="showPage('tools')">Tools</a></li>
+        <li><a href="#" onclick="showPage('downloads')">Downloads</a></li>
+        <li><a href="#" onclick="showPage('projects')">Projects</a></li>
+        <li><a href="#" onclick="showPage('team')">Team</a></li>
+        <li><a href="#" onclick="showPage('blog')">Blog</a></li>
+        <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+        <li><a href="#" onclick="showPage('about')">About</a></li>
+        <li><a href="#" onclick="showPage('secret')">Secret Zone</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="fade">
+      <div class="page-title">🏠 Home</div>
+      <p>Welcome to H4_SQUAD — your ultimate destination for underground tools & innovation.</p>
+      <p style="margin-top: 20px; font-style: italic; color: #fff">🚀 Want early access, secret tools, and squad-only perks?</p>
+      <p style="font-weight: bold; color: #0f0">👉 Join the official H4_SQUAD Telegram and become part of the elite.</p>
+      <a href="https://t.me/h4_squad" target="_blank" class="telegram-link">Join H4_SQUAD on Telegram</a>
+    </section>
+
+    <section id="tools" class="fade" style="display:none">
+      <div class="page-title">🧰 Tools</div>
+      <p>Explore our toolkits, scripts and online utilities crafted for power users.</p>
+    </section>
+
+    <section id="downloads" class="fade" style="display:none">
+      <div class="page-title">💾 Downloads</div>
+      <p><strong>ANYBODY INSTA I'D VIEWER INSTEAD BLOCK YOU CHECK POST , STORY , HIGHLIGHTS ETC.</strong></p>
+      <p><a href="https://shrinkme.ink/h4squad" target="_blank" class="telegram-link">🔗 Get the Insta Viewer Tool</a></p>
+    </section>
+
+    <section id="projects" class="fade" style="display:none">
+      <div class="page-title">🧠 Projects</div>
+      <p>See what the H4_SQUAD is building — current projects, upcoming ideas, etc.</p>
+    </section>
+
+    <section id="team" class="fade" style="display:none">
+      <div class="page-title">👥 <span style="font-size: 48px; font-weight: bold;">Meet the minds behind H4_SQUAD</span></div>
+      <p>Get to know the creative hackers and designers powering the revolution.</p>
+    </section>
+
+    <section id="blog" class="fade" style="display:none">
+      <div class="page-title">✍️ Blog</div>
+      <p>Tips, hacks, updates, and behind-the-scenes — directly from the squad.</p>
+    </section>
+
+    <section id="contact" class="fade" style="display:none">
+      <div class="page-title">📩 Contact</div>
+      <p>"We are the glitch in your system, the signal in your noise."<br>
+        Reach out on Telegram or connect via Instagram.</p>
+    </section>
+
+    <section id="about" class="fade" style="display:none">
+      <div class="page-title">ℹ️ About</div>
+      <p>H4_SQUAD is a creative underground group — part designers, part coders, all rebels.</p>
+    </section>
+
+    <section id="secret" class="fade" style="display:none">
+      <div class="page-title">🕳️ Secret Zone</div>
+      <p>Welcome to the hidden space. Connect with us on Instagram 🔍</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 H4_SQUAD | Designed with code and chaos 💀
+  </footer>
 </body>
 </html>
