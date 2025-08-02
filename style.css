@@ -1,0 +1,73 @@
+body {
+  background-color: #000;
+  color: #00ff00;
+  font-family: 'Courier New', monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  animation: fadeIn 2s ease;
+}
+
+h1 {
+  font-size: 3em;
+  text-shadow: 0 0 20px #00ff00;
+  animation: glow 1.5s infinite alternate;
+}
+
+.tagline {
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: #00ff88;
+  animation: typing 4s steps(40, end);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #00ff00;
+}
+
+button {
+  margin-top: 30px;
+  padding: 10px 25px;
+  font-size: 1em;
+  background-color: transparent;
+  color: #00ff00;
+  border: 2px solid #00ff00;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #00ff00;
+  color: #000;
+}
+
+#secret {
+  margin-top: 20px;
+  color: #0f0;
+  animation: fadeIn 2s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px #00ff00; }
+  to { text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
