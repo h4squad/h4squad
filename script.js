@@ -1,7 +1,11 @@
 function showPage(id) {
-  const pages = document.querySelectorAll("section");
-  pages.forEach(page => page.style.display = "none");
-  document.getElementById(id).style.display = "block";
+  document.querySelectorAll('section').forEach(page => {
+    page.classList.remove('active');
+  });
+  const section = document.getElementById(id);
+  if (section) {
+    section.classList.add('active');
+  }
 }
 window.onload = () => {
   showPage('home');
