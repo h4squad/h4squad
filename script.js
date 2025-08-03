@@ -7,6 +7,7 @@ function showPage(id) {
     section.classList.add('active');
   }
 }
+
 window.onload = () => {
   showPage('home');
 };
