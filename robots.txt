@@ -1,0 +1,3 @@
+Sitemap: https://h4squad.github.io/h4squad/sitemap.xml
+User-agent: *
+Disallow:

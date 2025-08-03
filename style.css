@@ -81,10 +81,12 @@ section h2 {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
-a.telegram-link, a.download-link, a.cta-link {
+a.telegram-link,
+a.download-link,
+a.cta-link {
   display: inline-block;
   margin-top: 30px;
-  padding: 14px 30px;
+  padding: 16px 36px;
   font-size: 1.1em;
   font-weight: bold;
   color: #0ff;
@@ -92,12 +94,47 @@ a.telegram-link, a.download-link, a.cta-link {
   border: 2px solid #0ff;
   border-radius: 12px;
   text-decoration: none;
-  transition: 0.4s ease;
-  box-shadow: 0 0 10px #0ff88f80;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 12px #00ffe550, 0 0 20px #00ffe530 inset;
 }
-a.telegram-link:hover, a.download-link:hover, a.cta-link:hover {
+a.telegram-link:hover,
+a.download-link:hover,
+a.cta-link:hover {
   background-color: #00ffe5;
   color: #000;
-  box-shadow: 0 0 20px #00ffe5;
-  transform: scale(1.06);
+  transform: scale(1.08);
+  box-shadow: 0 0 18px #00ffe5, 0 0 35px #00ffe5 inset;
+}
+a.download-link::before,
+a.telegram-link::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, #00ffe540 10%, transparent 70%);
+  animation: pulseGlowBtn 3s infinite;
+  z-index: 0;
+}
+a.download-link span,
+a.telegram-link span {
+  position: relative;
+  z-index: 1;
+}
+@keyframes pulseGlowBtn {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
 }
