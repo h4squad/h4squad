@@ -4,14 +4,12 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-
 body {
   background: radial-gradient(circle, #000000 30%, #001a1a 100%);
   color: #00ffe5;
   font-family: 'Fira Code', 'Courier New', Courier, monospace;
   overflow-x: hidden;
 }
-
 header {
   background: linear-gradient(145deg, #000000, #003300);
   padding: 40px;
@@ -19,34 +17,15 @@ header {
   box-shadow: 0 0 20px #00ffe5;
   animation: pulseGlow 6s ease-in-out infinite alternate;
 }
-
-/* New header logo + title */
-.logo-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
-.logo {
-  height: 80px;
-  border-radius: 12px;
-  box-shadow: 0 0 12px #00ffe5;
-}
-
-.title-text {
-  font-size: 2.5em;
-  font-weight: bold;
-  color: #00ffe5;
-  text-shadow: 0 0 15px #00ffe5;
-  animation: fadeInSlide 1.5s ease;
-}
-
 @keyframes pulseGlow {
   0% { box-shadow: 0 0 10px #00ffe5; }
   100% { box-shadow: 0 0 25px #00ffe5; }
 }
-
+header h1 {
+  font-size: 4em;
+  text-shadow: 0 0 20px #00ffe5;
+  animation: fadeInSlide 2s ease;
+}
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -57,7 +36,6 @@ nav {
   border-top: 2px solid #00ffe5;
   border-bottom: 2px solid #00ffe5;
 }
-
 nav a {
   color: #00ffe5;
   text-decoration: none;
@@ -68,14 +46,12 @@ nav a {
   font-weight: bold;
   transition: all 0.4s ease;
 }
-
 nav a:hover {
   background-color: #00ffe5;
   color: #000;
   transform: scale(1.1);
   box-shadow: 0 0 12px #00ffe5;
 }
-
 section {
   padding: 80px 30px;
   text-align: center;
@@ -90,25 +66,21 @@ section {
   border: 1px solid #00ffe544;
   backdrop-filter: blur(4px);
 }
-
 section.active {
   display: block;
   opacity: 1;
   transform: translateY(0);
 }
-
 section h2 {
   font-size: 2.2em;
   color: #00ffe5;
   text-shadow: 0 0 10px #00ffe5;
   animation: fadeInSlide 1.6s ease;
 }
-
 @keyframes fadeInSlide {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
 a.telegram-link,
 a.download-link,
 a.cta-link {
@@ -127,7 +99,6 @@ a.cta-link {
   transition: all 0.4s ease;
   box-shadow: 0 0 12px #00ffe550, 0 0 20px #00ffe530 inset;
 }
-
 a.telegram-link:hover,
 a.download-link:hover,
 a.cta-link:hover {
@@ -136,7 +107,6 @@ a.cta-link:hover {
   transform: scale(1.08);
   box-shadow: 0 0 18px #00ffe5, 0 0 35px #00ffe5 inset;
 }
-
 a.download-link::before,
 a.telegram-link::before {
   content: "";
@@ -149,15 +119,22 @@ a.telegram-link::before {
   animation: pulseGlowBtn 3s infinite;
   z-index: 0;
 }
-
 a.download-link span,
 a.telegram-link span {
   position: relative;
   z-index: 1;
 }
-
 @keyframes pulseGlowBtn {
-  0% { transform: scale(0.95); opacity: 0.6; }
-  50% { transform: scale(1.1); opacity: 0.3; }
-  100% { transform: scale(0.95); opacity: 0.6; }
+  0% {
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
 }
