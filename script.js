@@ -1,4 +1,3 @@
-
 function showPage(id) {
   document.querySelectorAll('section').forEach(page => {
     page.classList.remove('active');
