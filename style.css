@@ -87,7 +87,7 @@ a.cta-link {
   display: inline-block;
   margin-top: 30px;
   padding: 16px 36px;
-  font-size: 1.1em;
+  font-size: 1.4em;
   font-weight: bold;
   color: #0ff;
   background-color: transparent;
@@ -136,5 +136,36 @@ a.telegram-link span {
   100% {
     transform: scale(0.95);
     opacity: 0.6;
+  }
+}
+
+/* Logo Section */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.site-logo {
+  height: 60px;
+  width: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #00ffe5;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .logo-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .site-logo {
+    height: 50px;
+  }
+
+  header h1 {
+    font-size: 2.5em;
   }
 }
