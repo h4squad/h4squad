@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,22 +6,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="google98528907d0a24b32" />
   <title>H4 Squad</title>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "H4 Squad",
-  "url": "https://h4squad.github.io",
-  "description": "Elite collective of ethical hackers and cybersecurity innovators",
-  "keywords": ["H4 Squad", "hackers", "cybersecurity", "ethical hacking"]
-}
-</script>
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "H4 Squad",
+    "url": "https://h4squad.github.io",
+    "description": "Elite collective of ethical hackers and cybersecurity innovators",
+    "keywords": ["H4 Squad", "hackers", "cybersecurity", "ethical hacking"]
+  }
+  </script>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
+
+  <!-- Firebase Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js"></script>
+  <script>
+    const firebaseConfig = {
+  apiKey: "AIzaSyV6dR2Bw1nMHFbfL34E2z5G9vZSBuSg_0k",
+  authDomain: "h4weblogin-1f58f.firebaseapp.com",
+  projectId: "h4weblogin-1f58f",
+  storageBucket: "h4weblogin-1f58f.appspot.com",
+  messagingSenderId: "455389973730",
+  appId: "1:455389973730:web:08a38fd2d213144a991b7b"
+};
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <style>
+    .login-btn {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      padding: 10px 18px;
+      background-color: #00ffe5;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    .user-name {
+      position: fixed;
+      top: 14px;
+      left: 120px;
+      color: #0ff;
+      font-weight: bold;
+      font-size: 16px;
+      z-index: 1000;
+    }
+  </style>
 </head>
 <body>
+
+<!-- Login Button and User Info -->
+<button id="loginBtn" class="login-btn">Sign In</button>
+<span id="userName" class="user-name"></span>
 
 <header>
   <h1>H4 Squad</h1>
@@ -58,7 +102,7 @@
   <a class="download-link" href="https://adrinolinks.com/h4squad" target="_blank">
     👉 Insta -4 View by VIPESH , PULKIT (Click to Unlock)
   </a>
-<a class="download-link" href="https://adrinolinks.com/h4squada" target="_blank">
+  <a class="download-link" href="https://adrinolinks.com/h4squada" target="_blank">
     👉 REMINI-PRO by (SHIVAM BHAI)
   </a>
 </section>
@@ -66,6 +110,33 @@
 <section id="contact"><h2>"Ping us. Real ones know where to find us."</h2></section>
 <section id="community"><h2>"United minds create chaos — and order."</h2></section>
 <section id="hacks"><h2>"Hacks aren't crimes, they're art in disguise."</h2></section>
+
+<script>
+  const auth = firebase.auth();
+  const provider = new firebase.auth.GoogleAuthProvider();
+  const loginBtn = document.getElementById("loginBtn");
+  const userName = document.getElementById("userName");
+
+  loginBtn.onclick = () => {
+    auth.signInWithPopup(provider).then((result) => {
+      const user = result.user;
+      userName.textContent = `Welcome, ${user.displayName}`;
+      loginBtn.style.display = "none";
+    }).catch((error) => {
+      console.error("Login failed:", error);
+    });
+  };
+
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      userName.textContent = `Welcome, ${user.displayName}`;
+      loginBtn.style.display = "none";
+    } else {
+      loginBtn.style.display = "inline-block";
+      userName.textContent = "";
+    }
+  });
+</script>
 
 </body>
 </html>
