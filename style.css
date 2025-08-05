@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -26,6 +27,8 @@ header h1 {
   text-shadow: 0 0 20px #00ffe5;
   animation: fadeInSlide 2s ease;
 }
+
+/* ✅ LOGO FIXED CSS */
 .logo-container {
   display: flex;
   align-items: center;
@@ -41,18 +44,23 @@ header h1 {
   object-fit: contain;
   display: block;
 }
+
+/* Responsive for Mobile */
 @media (max-width: 600px) {
   .logo-container {
     flex-direction: column;
     gap: 10px;
   }
+
   .site-logo {
     height: 50px;
   }
+
   header h1 {
     font-size: 2.5em;
   }
 }
+
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -82,9 +90,9 @@ nav a:hover {
 section {
   padding: 80px 30px;
   text-align: center;
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
   transition: all 0.6s ease-in-out;
   background: rgba(0, 255, 229, 0.04);
   margin: 20px auto;
@@ -92,6 +100,11 @@ section {
   border-radius: 12px;
   border: 1px solid #00ffe544;
   backdrop-filter: blur(4px);
+}
+section.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 section h2 {
   font-size: 2.2em;
@@ -103,6 +116,7 @@ section h2 {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 a.telegram-link,
 a.download-link,
 a.cta-link {
