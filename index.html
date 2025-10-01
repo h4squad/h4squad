@@ -1,96 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,0>
-<title>H4 Squad — Mods & Premium Tools</title>
-<link rel="icon" href="images/logo.jpg">
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>H4 Squad — Mods & Premium Tools</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-<div class="app-wrap">
-  <header class="site-header">
-    <div class="left">
-      <img src="logo.jpg" alt="H4 Logo" class="logo">
-      <div class="brand">
-        <h1>H4 Squad</h1>
-        <p class="sub">Mods • Tools • Premium</p>
-      </div>
-    </div>
-    <div class="right">
-      <div class="search">
-        <input id="searchInput" type="search" placeholder="Search mods, apps or tools..." aria-label="Search mods">
-        <button id="searchClear" title="Clear">✕</button>
-      </div>
-      <nav class="top-nav" aria-label="top navigation">
-        <button data-target="home" class="nav-btn is-active">Home</button>
-        <button data-target="collections" class="nav-btn">Collections</button>
-        <button data-target="about" class="nav-btn">About</button>
-      </nav>
-    </div>
-  </header>
+  <div class="app-wrap">
 
-  <main class="main">
-    <section id="home" class="page active">
-      <div class="hero">
-        <h2>Curated Mods & Premium Tools</h2>
-        <p>Safe downloads, quick previews, and simple installation notes.</p>
+    <header class="site-header">
+      <div class="left">
+        <img src="logo.jpg" alt="logo" class="logo">
+        <div class="brand">
+          <h1>H4 Squad</h1>
+          <p class="sub">Mods • Tools • Premium</p>
+        </div>
       </div>
-      <div class="controls">
-        <select id="categoryFilter" aria-label="Filter by category">
-          <option value="all">All categories</option>
-          <option value="social">Social</option>
-          <option value="photo">Photo & Edit</option>
-          <option value="media">Media & Players</option>
-          <option value="utilities">Utilities</option>
-        </select>
-        <span id="resultsCount">0 results</span>
+
+      <div class="right">
+        <div class="search" style="position:relative;">
+          <input id="searchInput" type="search" placeholder="Search mods, apps or tools..." aria-label="Search mods" autocomplete="off">
+          <button id="searchClear" title="Clear">✕</button>
+          <!-- autocomplete list appended by JS -->
+        </div>
+
+        <nav class="top-nav" aria-label="top navigation">
+          <button data-target="home" class="nav-btn is-active">Home</button>
+          <button data-target="collections" class="nav-btn">Collections</button>
+          <button data-target="about" class="nav-btn">About</button>
+        </nav>
       </div>
-      <div id="cardsGrid" class="cards-grid"></div>
-    </section>
+    </header>
 
-    <section id="collections" class="page">
-      <h2>Top Collections</h2>
-      <div class="collections-grid">
-        <div class="collection-card" data-category="photo">Photo & Editor</div>
-        <div class="collection-card" data-category="social">Social Tools</div>
-        <div class="collection-card" data-category="media">Media & Players</div>
-        <div class="collection-card" data-category="utilities">Utilities</div>
-      </div>
-      <div id="collectionCards" class="cards-grid" style="margin-top:16px;"></div>
-    </section>
+    <main class="main">
+      <!-- HOME -->
+      <section id="home" class="page active">
+        <div class="hero">
+          <h2>Curated Mods & Premium Tools</h2>
+          <p>Safe downloads, quick previews, and simple installation notes.</p>
+          <div class="hero-actions">
+            <button id="showAll" class="btn primary">Browse All</button>
+            <a class="btn telegram" href="https://t.me/h4_squad" target="_blank" rel="noopener">Join Telegram</a>
+          </div>
+        </div>
 
-    <section id="about" class="page">
-      <h2>About H4 Squad</h2>
-      <p>H4 Squad shares curated tools for learning and customization. Respect copyright & terms of services. We do not host pirated content — replace the download links with your own hosted files when publishing.</p>
-    </section>
-  </main>
+        <div class="controls">
+          <div class="filters">
+            <select id="categoryFilter" aria-label="Filter by category">
+              <option value="all">All categories</option>
+              <option value="social">Social</option>
+              <option value="photo">Photo & Edit</option>
+              <option value="media">Media & Players</option>
+              <option value="utilities">Utilities</option>
+            </select>
+          </div>
+          <div class="stats">
+            <span id="resultsCount">0 results</span>
+          </div>
+        </div>
 
-  <footer class="site-footer">
-    <div>© <span id="year"></span> H4 Squad • Respect privacy</div>
-  </footer>
-</div> 
+        <div id="cardsGrid" class="cards-grid" aria-live="polite"></div>
+      </section>
 
-<!-- Modal -->
-<div id="modal" class="modal" role="dialog" aria-hidden="true">
-  <div class="modal-panel">
-    <button id="modalClose" class="modal-close">✕</button>
-    <div class="modal-body">
-      <img id="modalImg" class="modal-img" src="" alt="mod image">
-      <div class="modal-content">
-        <h3 id="modalTitle"></h3>
-        <p id="modalDesc"></p>
-        <ul class="meta">
-          <li><strong>Size:</strong> <span id="modalSize"></span></li>
-          <li><strong>Category:</strong> <span id="modalCat"></span></li>
-        </ul>
-        <div class="modal-actions">
-          <a id="downloadBtn" class="btn primary" href="#" target="_blank">Download</a>
+      <!-- COLLECTIONS -->
+      <section id="collections" class="page">
+        <h2>Top Collections</h2>
+        <div class="collections-grid">
+          <div class="collection-card" data-category="photo"><h3>Photo & Editor</h3></div>
+          <div class="collection-card" data-category="social"><h3>Social Tools</h3></div>
+          <div class="collection-card" data-category="media"><h3>Media & Players</h3></div>
+          <div class="collection-card" data-category="utilities"><h3>Utilities</h3></div>
+        </div>
+
+        <div id="collectionCards" class="cards-grid" style="margin-top:18px;"></div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="page">
+        <h2>About H4 Squad</h2>
+        <p>H4 Squad shares curated tools for learning and customization. Respect copyright & terms of services.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>© <span id="year"></span> H4 Squad • Respect privacy</div>
+    </footer>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" role="dialog" aria-hidden="true">
+    <div class="modal-panel" role="document">
+      <button id="modalClose" class="modal-close" aria-label="Close">✕</button>
+      <div class="modal-body">
+        <img id="modalImg" src="images/default.jpg" alt="" class="modal-img">
+        <div class="modal-content">
+          <h3 id="modalTitle"></h3>
+          <p id="modalDesc"></p>
+          <ul class="meta">
+            <li><strong>Size:</strong> <span id="modalSize"></span></li>
+            <li><strong>Category:</strong> <span id="modalCat"></span></li>
+          </ul>
+          <div class="modal-actions">
+            <a id="downloadBtn" class="btn primary" href="#" target="_blank" rel="noopener">Download</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+
 </body>
 </html>
