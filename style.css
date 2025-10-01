@@ -104,3 +104,26 @@ footer.site-footer{padding:12px;font-size:12px;text-align:center;color:var(--mut
   .cards-grid,.collections-grid{grid-template-columns:repeat(2,1fr);}
   .card,.collection-card{padding:10px;}
 }
+/* Desktop / Large screens */
+.search input {
+  width:560px; /* width bada kar diya */
+  padding:10px 40px 10px 14px;
+  border-radius:10px;
+  border:1px solid rgba(0,0,0,0.06);
+  outline:none;
+  transition: width 0.3s ease;
+}
+
+/* Medium screens (tablet) */
+@media (max-width:780px){
+  .search input {
+    width: 480pxpx; /* responsive width */
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width:420px){
+  .search input {
+    width: 215px; /* chhoti screen ke liye */
+  }
+}
