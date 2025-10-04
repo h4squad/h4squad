@@ -14,7 +14,6 @@ const ITEMS = [
   {title:"YOUTUBE PREMIUM",category:"media",desc:"Ad-free YouTube",size:"8MB",url:"https://a.xpshort.com/GWecRC",img:"youtube.jpg"},
   {title:"SONY-LIV PRO",category:"media",desc:"Premium SonyLiv features",size:"18MB",url:"https://a.xpshort.com/UZGCZ",img:"sonyliv.jpg"},
   {title:"PICSART PRO",category:"photo",desc:"Pro editing tools",size:"25MB",url:"https://a.xpshort.com/VVI56C",img:"picsart.jpg"},
-  {title:"TRUECALLER GOLD",category:"utilities",desc:"Caller ID & spam blocker",size:"5MB",url:"https://a.xpshort.com/TwgRw",img:"truecaller.jpg"},
   {title:"PhonPe Spoof",category:"utilities",desc:"Payment simulation tool",size:"3MB",url:"https://a.xpshort.com/HaSk",img:"phonepe.jpg"},
   {title:"Amazon MTV",category:"utilities",desc:"Premium shopping tools",size:"10MB",url:"https://a.xpshort.com/r2zyCe",img:"amazon.jpg"},
   {title:"FF Panel",category:"utilities",desc:"Direct Headshot, Many more",size:"187MB",url:"https://xpshort.com/panelff",img:"ffpanel.jpg"},
